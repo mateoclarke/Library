@@ -4,11 +4,9 @@ class Library
     puts "You have created a new Library with no books yet."
   end
 
-  def books
-
-  end
-
   def list_books
+    puts "What books do we have in the library you ask?"
+    @books.each {|book| puts book.title }
   end
 
   def borrowed_books
