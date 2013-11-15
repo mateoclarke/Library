@@ -23,7 +23,16 @@ class Library
   end
 
   def check_out(user, book)
-  end
+    if user.borrowed_books.length == 2
+      return "Sorry, that user already has two books checked out"
+    end
+
+    if book.status == "available"
+      book.borrower = user
+      book.status = "checked out"
+    else
+      return "Sorry, that book is not available"
+    end
 
   def check_in(book)
   end
@@ -53,6 +62,8 @@ class Book
   def initialize(title, author)
     @title = title
     @author = author
+    @status = "available"
+    @borrower = nil
     puts "You have purchased/printed a new book called #{title} by the author #{author}."
   end
 
@@ -63,4 +74,21 @@ class Book
   def author
     @author
   end
+
+  def status
+    @status    
+  end
+
+  def status=(new_value)
+    @status = new_value
+  end
+
+  def borrower
+    @borrower
+  end
+
+  def borrower=(new_value)
+    @borrower = new_value
+  end
+
 end
