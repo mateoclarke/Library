@@ -20,8 +20,8 @@ class Library
   def add_book(book)
     #add book to the library
     @books.push(book)
-    puts "This is our book ID number #{book}"
-    puts book.title
+    puts "You've added " + book.title + " to the Library."
+    puts "You know have " + @books.length.to_s + " books in the Library."
   end
 
   def check_out(user, book)
