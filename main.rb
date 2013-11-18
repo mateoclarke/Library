@@ -79,4 +79,12 @@ puts "this should only show the available books"
 library.available_books
 puts "-------------------------"
 
+#added check_in method
+puts "this should check a book back into the library from Mike"
+library.check_in(stranger)
+library.check_in(k_and_r)
+puts "-------------------------"
 
+# test after check_in method to show current availability of books
+library.borrowed_books
+library.available_books
